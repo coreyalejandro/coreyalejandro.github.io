@@ -448,6 +448,95 @@ class ThemeManager {
     }
 }
 
+// Three.js 3D Model Manager
+class ThreeJSManager {
+    constructor() {
+        this.scene = null;
+        this.camera = null;
+        this.renderer = null;
+        this.model = null;
+        this.container = document.getElementById('three-container');
+        
+        if (this.container) {
+            this.init();
+        }
+    }
+
+    init() {
+        // Import Three.js dynamically
+        import('three').then(({ Scene, PerspectiveCamera, WebGLRenderer, AmbientLight, DirectionalLight, GLTFLoader, Clock }) => {
+            this.setupScene(Scene, PerspectiveCamera, WebGLRenderer, AmbientLight, DirectionalLight, GLTFLoader, Clock);
+        }).catch(err => {
+            console.log('Three.js not available, skipping 3D model');
+        });
+    }
+
+    setupScene(Scene, PerspectiveCamera, WebGLRenderer, AmbientLight, DirectionalLight, GLTFLoader, Clock) {
+        // Scene setup
+        this.scene = new Scene();
+        
+        // Camera setup
+        this.camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        this.camera.position.z = 5;
+        
+        // Renderer setup
+        this.renderer = new WebGLRenderer({ 
+            alpha: true, 
+            antialias: true 
+        });
+        this.renderer.setSize(window.innerWidth, window.innerHeight);
+        this.renderer.setClearColor(0x000000, 0);
+        this.container.appendChild(this.renderer.domElement);
+        
+        // Lighting
+        const ambientLight = new AmbientLight(0xffffff, 0.5);
+        this.scene.add(ambientLight);
+        
+        const directionalLight = new DirectionalLight(0xffffff, 1);
+        directionalLight.position.set(5, 5, 5);
+        this.scene.add(directionalLight);
+        
+        // Load the GLB model
+        const loader = new GLTFLoader();
+        loader.load(
+            '/assets/3d/ninja_eyeball_textured_mesh.glb',
+            (gltf) => {
+                this.model = gltf.scene;
+                this.model.scale.set(2, 2, 2);
+                this.model.position.set(0, 0, 0);
+                this.scene.add(this.model);
+            },
+            (progress) => {
+                console.log('Loading progress:', (progress.loaded / progress.total * 100) + '%');
+            },
+            (error) => {
+                console.error('Error loading GLB model:', error);
+            }
+        );
+        
+        // Animation loop
+        const clock = new Clock();
+        const animate = () => {
+            requestAnimationFrame(animate);
+            
+            if (this.model) {
+                this.model.rotation.y += 0.01;
+                this.model.rotation.x = Math.sin(clock.getElapsedTime() * 0.5) * 0.1;
+            }
+            
+            this.renderer.render(this.scene, this.camera);
+        };
+        animate();
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            this.camera.aspect = window.innerWidth / window.innerHeight;
+            this.camera.updateProjectionMatrix();
+            this.renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    }
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Fix the linter errors by adding webkit prefixes
@@ -468,6 +557,9 @@ document.addEventListener('DOMContentLoaded', () => {
     new CardEffects();
     new TypingEffect();
     new SkillAnimations();
+    
+    // Initialize 3D model
+    new ThreeJSManager();
 
     // Add some extra joy with confetti on scroll
     let confettiCount = 0;
