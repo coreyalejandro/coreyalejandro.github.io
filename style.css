@@ -50,6 +50,38 @@
     --ghibli-sky: linear-gradient(135deg, #7f9fa6, #83c67e, #e6c07b, #ed6a5e);
 }
 
+/* African-American Ghibli Theme */
+[data-theme="ghibli-aa"] {
+    --primary-bg: #1a0f1a;
+    --secondary-bg: #2d1b2d;
+    --card-bg: #3a233a;
+    --border-color: #8b4513;
+    --text-primary: #f4e4bc;
+    --text-secondary: #d4af37;
+    --text-muted: #b8860b;
+    
+    /* African-American Ghibli Accent Colors */
+    --accent-red: #8b0000;
+    --accent-green: #228b22;
+    --accent-blue-gray: #4682b4;
+    --accent-yellow: #daa520;
+    --accent-purple: #9370db;
+    --accent-orange: #ff8c00;
+    --table-highlight: #4a2c2a;
+    
+    /* African-American Ghibli Gradients */
+    --ghibli-sunset: linear-gradient(135deg, #8b0000, #daa520, #228b22, #4682b4);
+    --ghibli-forest: linear-gradient(135deg, #228b22, #4682b4, #8b0000, #daa520);
+    --ghibli-sky: linear-gradient(135deg, #4682b4, #228b22, #daa520, #8b0000);
+    
+    /* Special Ghibli-inspired elements */
+    --ghibli-dust: #f4e4bc;
+    --ghibli-earth: #8b4513;
+    --ghibli-fire: #ff4500;
+    --ghibli-water: #4169e1;
+    --ghibli-air: #87ceeb;
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--primary-bg);
@@ -174,6 +206,75 @@ html {
     background: var(--ghibli-forest);
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     animation: island-float var(--float-animation);
+}
+
+/* African-American Ghibli Special Elements */
+[data-theme="ghibli-aa"] .island {
+    background: var(--ghibli-earth);
+    border: 2px solid var(--ghibli-dust);
+}
+
+[data-theme="ghibli-aa"] .particle {
+    background: var(--ghibli-dust);
+    box-shadow: 0 0 10px var(--ghibli-dust);
+}
+
+[data-theme="ghibli-aa"] .nebula {
+    background: var(--ghibli-sunset);
+    opacity: 0.4;
+}
+
+[data-theme="ghibli-aa"] .stars {
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, var(--ghibli-dust), transparent),
+        radial-gradient(2px 2px at 40px 70px, var(--ghibli-fire), transparent),
+        radial-gradient(1px 1px at 90px 40px, var(--ghibli-water), transparent),
+        radial-gradient(1px 1px at 130px 80px, var(--ghibli-air), transparent),
+        radial-gradient(2px 2px at 160px 30px, var(--ghibli-earth), transparent);
+}
+
+/* Dramatic theme transitions */
+[data-theme="ghibli-aa"] .project-card,
+[data-theme="ghibli-aa"] .skill-category,
+[data-theme="ghibli-aa"] .contact-card,
+[data-theme="ghibli-aa"] .quote-card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+    box-shadow: 0 10px 30px rgba(139, 69, 19, 0.3);
+}
+
+[data-theme="ghibli-aa"] .badge-neurodivergent {
+    background: rgba(139, 0, 0, 0.2);
+    border-color: var(--accent-red);
+    color: var(--accent-red);
+}
+
+[data-theme="ghibli-aa"] .badge-ai {
+    background: rgba(34, 139, 34, 0.2);
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+}
+
+[data-theme="ghibli-aa"] .badge-accessible {
+    background: rgba(218, 165, 32, 0.2);
+    border-color: var(--accent-yellow);
+    color: var(--accent-yellow);
+}
+
+[data-theme="ghibli-aa"] .title-line {
+    background: var(--ghibli-sunset);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+[data-theme="ghibli-aa"] .avatar-image {
+    background: var(--ghibli-forest);
+    border-color: var(--ghibli-earth);
+}
+
+[data-theme="ghibli-aa"] .avatar-glow {
+    background: var(--ghibli-sunset);
 }
 
 .island-1 {

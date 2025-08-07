@@ -429,22 +429,41 @@ class ThemeManager {
     }
 
     toggleTheme() {
-        const newTheme = this.currentTheme === 'y2k' ? 'corey' : 'y2k';
+        const themes = ['y2k', 'corey', 'ghibli-aa'];
+        const currentIndex = themes.indexOf(this.currentTheme);
+        const nextIndex = (currentIndex + 1) % themes.length;
+        const newTheme = themes[nextIndex];
         this.applyTheme(newTheme);
     }
 
     applyTheme(theme) {
         this.currentTheme = theme;
-        document.documentElement.setAttribute('data-theme', theme === 'corey' ? 'corey' : '');
+        document.documentElement.setAttribute('data-theme', theme === 'y2k' ? '' : theme);
         localStorage.setItem('theme', theme);
         
         // Update theme icon
         if (this.themeIcon) {
-            this.themeIcon.textContent = theme === 'y2k' ? '🌙' : '✨';
+            const icons = {
+                'y2k': '🌙',
+                'corey': '✨',
+                'ghibli-aa': '🌾'
+            };
+            this.themeIcon.textContent = icons[theme] || '🌙';
         }
         
         // Update theme name in console
-        console.log(`🎨 Switched to ${theme === 'y2k' ? 'Y2K' : 'Corey\'s'} theme!`);
+        const themeNames = {
+            'y2k': 'Y2K',
+            'corey': 'Corey\'s Professional',
+            'ghibli-aa': 'African-American Ghibli'
+        };
+        console.log(`🎨 Switched to ${themeNames[theme]} theme!`);
+        
+        // Add dramatic transition effect
+        document.body.style.transition = 'all 0.5s ease-in-out';
+        setTimeout(() => {
+            document.body.style.transition = '';
+        }, 500);
     }
 }
 
