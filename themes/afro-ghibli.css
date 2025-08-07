@@ -1,0 +1,31 @@
+:root {
+  --primary-bg: #0d1117;
+  --secondary-bg: #161b22;
+  --card-bg: #161b22;
+  --border-color: #30363d;
+  --text-primary: #c9d1d9;
+  --text-secondary: #8b949e;
+  --text-muted: #8b949e;
+  /* Accent colors */
+  --accent-red: #ed6a5e;
+  --accent-green: #83c67e;
+  --accent-blue-gray: #7f9fa6;
+  --accent-yellow: #e6c07b;
+  /* Legacy accent variables */
+  --accent-purple: var(--accent-red);
+  --accent-blue: var(--accent-blue-gray);
+  --accent-pink: var(--accent-yellow);
+  --table-highlight: #21262d;
+  --radius-card: 8px;
+  --radius-button: 6px;
+  --padding-card: 1.5rem;
+  --spacing-section: 24px;
+  --spacing-element: 16px;
+  --padding-table-y: 0.75em;
+  --padding-table-x: 1.25em;
+  --divider-color: #30363d;
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-size-base: 16px;
+  --parallax-speed: 0.7;
+  --float-animation: 6s ease-in-out infinite;
+}
