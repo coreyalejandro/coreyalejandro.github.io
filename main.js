@@ -420,7 +420,7 @@ class SkillAnimations {
 // Theme Management
 class ThemeManager {
     constructor() {
-        this.currentTheme = localStorage.getItem('theme') || 'y2k';
+        this.currentTheme = localStorage.getItem('theme') || 'afro-ghibli';
         this.themeToggle = document.getElementById('themeToggle');
         this.themeIcon = this.themeToggle?.querySelector('.theme-icon');
         
@@ -441,7 +441,7 @@ class ThemeManager {
     }
 
     toggleTheme() {
-        const themes = ['y2k', 'corey', 'ghibli-aa'];
+        const themes = ['afro-ghibli', 'y2k-dark', 'y2k-light'];
         const currentIndex = themes.indexOf(this.currentTheme);
         const nextIndex = (currentIndex + 1) % themes.length;
         const newTheme = themes[nextIndex];
@@ -450,24 +450,34 @@ class ThemeManager {
 
     applyTheme(theme) {
         this.currentTheme = theme;
-        document.documentElement.setAttribute('data-theme', theme === 'y2k' ? '' : theme);
+        document.documentElement.setAttribute('data-theme', theme === 'afro-ghibli' ? '' : theme);
         localStorage.setItem('theme', theme);
         
         // Update theme icon
         if (this.themeIcon) {
             const icons = {
-                'y2k': '🌙',
-                'corey': '✨',
-                'ghibli-aa': '🌾'
+                'afro-ghibli': '🌾',
+                'y2k-dark': '🌙',
+                'y2k-light': '☀️'
             };
-            this.themeIcon.textContent = icons[theme] || '🌙';
+            this.themeIcon.textContent = icons[theme] || '🌾';
+        }
+
+        // Update toggle label
+        if (this.themeToggle) {
+            const labels = {
+                'afro-ghibli': 'Switch to Y2K dark theme',
+                'y2k-dark': 'Switch to Y2K light theme',
+                'y2k-light': 'Switch to Afro Ghibli theme'
+            };
+            this.themeToggle.setAttribute('aria-label', labels[theme] || 'Toggle theme');
         }
         
         // Update theme name in console
         const themeNames = {
-            'y2k': 'Y2K',
-            'corey': 'Corey\'s Professional',
-            'ghibli-aa': 'African-American Ghibli'
+            'afro-ghibli': 'Afro Ghibli',
+            'y2k-dark': 'Y2K Dark',
+            'y2k-light': 'Y2K Light'
         };
         console.log(`🎨 Switched to ${themeNames[theme]} theme!`);
         
