@@ -62,7 +62,7 @@ class ParallaxController {
                 if (target) {
                     const navbar = document.querySelector('.navbar');
                     const navbarHeight = navbar ? navbar.offsetHeight : 80;
-                    const targetPosition = target.offsetTop - navbarHeight - 20;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 20;
                     
                     window.scrollTo({
                         top: targetPosition,
