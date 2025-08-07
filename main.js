@@ -16,6 +16,7 @@ class ParallaxController {
 
     init() {
         this.bindEvents();
+        this.setupSmoothScrolling();
         this.animateParticles();
         this.createFloatingElements();
         this.startParallaxLoop();
@@ -46,22 +47,30 @@ class ParallaxController {
             this.mouseY = (touch.clientY / window.innerHeight - 0.5) * 2;
         });
 
+        // Intersection Observer for animations
+        this.setupIntersectionObserver();
+    }
+
+    setupSmoothScrolling() {
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                const target = document.querySelector(link.getAttribute('href'));
+                const href = link.getAttribute('href');
+                const target = document.querySelector(href);
+                
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const navbar = document.querySelector('.navbar');
+                    const navbarHeight = navbar ? navbar.offsetHeight : 80;
+                    const targetPosition = target.offsetTop - navbarHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
         });
-
-        // Intersection Observer for animations
-        this.setupIntersectionObserver();
     }
 
     setupIntersectionObserver() {
