@@ -246,7 +246,7 @@ class ParallaxController {
 // Enhanced hover effects for project cards
 class CardEffects {
     constructor() {
-        this.cards = document.querySelectorAll('.project-card, .contact-card, .skill-category');
+        this.cards = document.querySelectorAll('.project-card, .contact-card, .skill-category, .quote-card');
         this.init();
     }
 

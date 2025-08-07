@@ -730,6 +730,13 @@ html {
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     animation: quote-float 8s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.quote-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-purple);
+    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
 }
 
 .quote-icon {
