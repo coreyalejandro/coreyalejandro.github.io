@@ -173,13 +173,16 @@ class ParallaxController {
 
     startParallaxLoop() {
         const animate = () => {
-            // Apply dramatic parallax to layers
+            // Calculate scale factor based on scroll position for depth effect
+            const scaleFactor = 1 + this.scrollY * 0.0005;
+
+            // Apply dramatic parallax and scaling to layers
             this.layers.forEach(layer => {
                 const speed = parseFloat(layer.dataset.speed) || 1;
                 const baseTransform = this.scrollY * speed * 0.5;
                 const mouseTransform = this.mouseX * speed * 20;
-                
-                layer.style.transform = `translateY(${baseTransform}px) translateX(${mouseTransform}px)`;
+
+                layer.style.transform = `translateY(${baseTransform}px) translateX(${mouseTransform}px) scale(${scaleFactor})`;
             });
 
             // Animate neural network connections

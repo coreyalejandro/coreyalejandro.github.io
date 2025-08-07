@@ -23,7 +23,7 @@
     --ghibli-sky: linear-gradient(135deg, #6c5ce7, #a29bfe, #74b9ff, #00cec9);
     
     /* Animation variables */
-    --parallax-speed: 0.5;
+    --parallax-speed: 0.7;
     --float-animation: 6s ease-in-out infinite;
 }
 
