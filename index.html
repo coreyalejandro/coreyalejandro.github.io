@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corey Alejandro | AI & Data Engineer</title>
     
+    <!-- Material Design Typography -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Animated Space Background -->
+    <!-- Material Design App Bar Background -->
     <div class="space-background">
         <div class="stars"></div>
         <div class="nebula"></div>
@@ -18,235 +19,238 @@
         <div class="floating-elements"></div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
+    <!-- Material Design App Bar -->
+    <header class="navbar" role="banner">
         <div class="nav-container">
             <div class="nav-logo">
-                <span>coreyalejandro</span>
+                <span class="nav-logo-text">coreyalejandro</span>
             </div>
-            <div class="nav-links">
-                <a href="#about" class="nav-link">ABOUT</a>
+            <nav class="nav-links" role="navigation" aria-label="Main navigation">
+                <a href="#about" class="nav-link" aria-current="page">ABOUT</a>
                 <a href="#projects" class="nav-link">PROJECTS</a>
                 <a href="#skills" class="nav-link">SKILLS</a>
                 <a href="#connect" class="nav-link">CONNECT</a>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <span class="theme-icon">🌙</span>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" type="button">
+                    <span class="theme-icon" aria-hidden="true">🌙</span>
                 </button>
-            </div>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="about">
-        <div class="hero-container">
-            <div class="hero-icon">
-                <i class="fas fa-brain"></i>
-            </div>
-            <h1 class="hero-title">Corey Alejandro</h1>
-            <h2 class="hero-subtitle">AI & DATA ENGINEER</h2>
-            <p class="hero-description">
-                Neurodivergent builder of trauma-informed, human-aware machine learning systems. 
-                Studio Ghibli dreamer with a passion for accessible AI.
-            </p>
-            <div class="hero-tags">
-                <span class="tag tag-neurodivergent">
+    <!-- Material Design Main Content -->
+    <main role="main">
+        <!-- Hero Section - Material Design Banner -->
+        <section class="hero" id="about" aria-labelledby="hero-title">
+            <div class="hero-container">
+                <div class="hero-icon" aria-hidden="true">
                     <i class="fas fa-brain"></i>
-                    NEURODIVERGENT
-                </span>
-                <span class="tag tag-ai">
-                    <i class="fas fa-seedling"></i>
-                    AI FOR GOOD
-                </span>
-                <span class="tag tag-accessible">
-                    <i class="fas fa-universal-access"></i>
-                    ACCESSIBLE DESIGN
-                </span>
-            </div>
-            <div class="hero-buttons">
-                <button class="btn btn-primary">VIEW MY WORK</button>
-                <button class="btn btn-secondary">LET'S CONNECT</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quote Section -->
-    <section class="quote-section">
-        <div class="container">
-            <div class="quote-card">
-                <div class="quote-icon">
-                    <i class="fas fa-seedling"></i>
                 </div>
-                <blockquote class="quote-text">
-                    "Write programs that do one thing and do it well."
-                </blockquote>
-                <cite class="quote-attribution">
-                    — Doug McIlroy, Unix Philosophy (1978)
-                </cite>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3 class="project-title">Trauma-Informed AI</h3>
-                    <p class="project-description">
-                        Building machine learning systems that understand and respect human trauma responses.
-                    </p>
-                    <div class="project-tags">
-                        <span class="project-tag">PYTHON</span>
-                        <span class="project-tag">TENSORFLOW</span>
-                        <span class="project-tag">PSYCHOLOGY</span>
-                    </div>
+                <h1 class="hero-title" id="hero-title">Corey Alejandro</h1>
+                <h2 class="hero-subtitle">AI & DATA ENGINEER</h2>
+                <p class="hero-description">
+                    Neurodivergent builder of trauma-informed, human-aware machine learning systems. 
+                    Studio Ghibli dreamer with a passion for accessible AI.
+                </p>
+                <div class="hero-tags" role="list" aria-label="Professional tags">
+                    <span class="tag tag-neurodivergent" role="listitem">
+                        <i class="fas fa-brain" aria-hidden="true"></i>
+                        NEURODIVERGENT
+                    </span>
+                    <span class="tag tag-ai" role="listitem">
+                        <i class="fas fa-seedling" aria-hidden="true"></i>
+                        AI FOR GOOD
+                    </span>
+                    <span class="tag tag-accessible" role="listitem">
+                        <i class="fas fa-universal-access" aria-hidden="true"></i>
+                        ACCESSIBLE DESIGN
+                    </span>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-universal-access"></i>
-                    </div>
-                    <h3 class="project-title">Accessible UX Design</h3>
-                    <p class="project-description">
-                        Creating inclusive interfaces that work for everyone, especially neurodivergent users.
-                    </p>
-                    <div class="project-tags">
-                        <span class="project-tag">REACT</span>
-                        <span class="project-tag">WCAG 2.1</span>
-                        <span class="project-tag">UX RESEARCH</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h3 class="project-title">Ghibli-Inspired Systems</h3>
-                    <p class="project-description">
-                        Bringing the magic and wonder of Studio Ghibli into digital experiences.
-                    </p>
-                    <div class="project-tags">
-                        <span class="project-tag">THREE.JS</span>
-                        <span class="project-tag">CSS3</span>
-                        <span class="project-tag">ANIMATION</span>
-                    </div>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" type="button">VIEW MY WORK</button>
+                    <button class="btn btn-secondary" type="button">LET'S CONNECT</button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3 class="category-title">🤖 AI & Machine Learning</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">Python</div>
-                        <div class="skill-item">TensorFlow</div>
-                        <div class="skill-item">PyTorch</div>
+        <!-- Quote Section - Material Design Card -->
+        <section class="quote-section" aria-labelledby="quote-text">
+            <div class="container">
+                <article class="quote-card">
+                    <div class="quote-icon" aria-hidden="true">
+                        <i class="fas fa-seedling"></i>
                     </div>
-                </div>
+                    <blockquote class="quote-text" id="quote-text">
+                        "Write programs that do one thing and do it well."
+                    </blockquote>
+                    <cite class="quote-attribution">
+                        — Doug McIlroy, Unix Philosophy (1978)
+                    </cite>
+                </article>
+            </div>
+        </section>
 
-                <div class="skill-category">
-                    <h3 class="category-title">🌐 Full Stack Development</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">React</div>
-                        <div class="skill-item">Node.js</div>
-                        <div class="skill-item">TypeScript</div>
-                    </div>
-                </div>
+        <!-- Featured Projects Section - Material Design Grid -->
+        <section id="projects" aria-labelledby="projects-title">
+            <div class="container">
+                <h2 class="section-title" id="projects-title">Featured Projects</h2>
+                <div class="projects-grid" role="list" aria-label="Featured projects">
+                    <article class="project-card" role="listitem">
+                        <div class="project-icon" aria-hidden="true">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="project-title">Trauma-Informed AI</h3>
+                        <p class="project-description">
+                            Building machine learning systems that understand and respect human trauma responses.
+                        </p>
+                        <div class="project-tags" role="list" aria-label="Project technologies">
+                            <span class="project-tag" role="listitem">PYTHON</span>
+                            <span class="project-tag" role="listitem">TENSORFLOW</span>
+                            <span class="project-tag" role="listitem">PSYCHOLOGY</span>
+                        </div>
+                    </article>
 
-                <div class="skill-category">
-                    <h3 class="category-title">♿️ Accessibility & UX</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">WCAG 2.1 AA</div>
-                        <div class="skill-item">Neurodivergent Design</div>
-                        <div class="skill-item">User Research</div>
-                    </div>
+                    <article class="project-card" role="listitem">
+                        <div class="project-icon" aria-hidden="true">
+                            <i class="fas fa-universal-access"></i>
+                        </div>
+                        <h3 class="project-title">Accessible UX Design</h3>
+                        <p class="project-description">
+                            Creating inclusive interfaces that work for everyone, especially neurodivergent users.
+                        </p>
+                        <div class="project-tags" role="list" aria-label="Project technologies">
+                            <span class="project-tag" role="listitem">REACT</span>
+                            <span class="project-tag" role="listitem">WCAG 2.1</span>
+                            <span class="project-tag" role="listitem">UX RESEARCH</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card" role="listitem">
+                        <div class="project-icon" aria-hidden="true">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3 class="project-title">Ghibli-Inspired Systems</h3>
+                        <p class="project-description">
+                            Bringing the magic and wonder of Studio Ghibli into digital experiences.
+                        </p>
+                        <div class="project-tags" role="list" aria-label="Project technologies">
+                            <span class="project-tag" role="listitem">THREE.JS</span>
+                            <span class="project-tag" role="listitem">CSS3</span>
+                            <span class="project-tag" role="listitem">ANIMATION</span>
+                        </div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Connect Section -->
-    <section id="connect">
-        <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <div class="connect-grid">
-                <div class="connect-card">
-                    <div class="connect-icon">
-                        <i class="fab fa-github"></i>
-                    </div>
-                    <h3>GitHub</h3>
-                    <a href="https://github.com/coreyalejandro" target="_blank" rel="noopener" class="connect-link">
-                        @coreyalejandro
-                    </a>
-                </div>
+        <!-- Skills Section - Material Design Cards -->
+        <section id="skills" aria-labelledby="skills-title">
+            <div class="container">
+                <h2 class="section-title" id="skills-title">Skills & Expertise</h2>
+                <div class="skills-grid" role="list" aria-label="Skill categories">
+                    <article class="skill-category" role="listitem">
+                        <h3 class="category-title">🤖 AI & Machine Learning</h3>
+                        <div class="skill-list" role="list" aria-label="AI skills">
+                            <div class="skill-item" role="listitem">Python</div>
+                            <div class="skill-item" role="listitem">TensorFlow</div>
+                            <div class="skill-item" role="listitem">PyTorch</div>
+                        </div>
+                    </article>
 
-                <div class="connect-card">
-                    <div class="connect-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3>Portfolio</h3>
-                    <a href="https://coreyalejandro.com" target="_blank" rel="noopener" class="connect-link">
-                        coreyalejandro.com
-                    </a>
-                </div>
+                    <article class="skill-category" role="listitem">
+                        <h3 class="category-title">🌐 Full Stack Development</h3>
+                        <div class="skill-list" role="list" aria-label="Development skills">
+                            <div class="skill-item" role="listitem">React</div>
+                            <div class="skill-item" role="listitem">Node.js</div>
+                            <div class="skill-item" role="listitem">TypeScript</div>
+                        </div>
+                    </article>
 
-                <div class="connect-card">
-                    <div class="connect-icon">
-                        <i class="fab fa-linkedin"></i>
-                    </div>
-                    <h3>LinkedIn</h3>
-                    <a href="https://linkedin.com/in/coreyalejandro" target="_blank" rel="noopener" class="connect-link">
-                        in/coreyalejandro
-                    </a>
-                </div>
-
-                <div class="connect-card">
-                    <div class="connect-icon">
-                        <i class="fab fa-twitter"></i>
-                    </div>
-                    <h3>Twitter</h3>
-                    <a href="https://twitter.com/coreyalejandroX" target="_blank" rel="noopener" class="connect-link">
-                        @coreyalejandroX
-                    </a>
+                    <article class="skill-category" role="listitem">
+                        <h3 class="category-title">♿️ Accessibility & UX</h3>
+                        <div class="skill-list" role="list" aria-label="Accessibility skills">
+                            <div class="skill-item" role="listitem">WCAG 2.1 AA</div>
+                            <div class="skill-item" role="listitem">Neurodivergent Design</div>
+                            <div class="skill-item" role="listitem">User Research</div>
+                        </div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+        <!-- Connect Section - Material Design Cards -->
+        <section id="connect" aria-labelledby="connect-title">
+            <div class="container">
+                <h2 class="section-title" id="connect-title">Let's Connect</h2>
+                <div class="connect-grid" role="list" aria-label="Contact methods">
+                    <article class="connect-card" role="listitem">
+                        <div class="connect-icon" aria-hidden="true">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3>GitHub</h3>
+                        <a href="https://github.com/coreyalejandro" target="_blank" rel="noopener" class="connect-link" aria-label="Visit GitHub profile">
+                            @coreyalejandro
+                        </a>
+                    </article>
+
+                    <article class="connect-card" role="listitem">
+                        <div class="connect-icon" aria-hidden="true">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Portfolio</h3>
+                        <a href="https://coreyalejandro.com" target="_blank" rel="noopener" class="connect-link" aria-label="Visit portfolio website">
+                            coreyalejandro.com
+                        </a>
+                    </article>
+
+                    <article class="connect-card" role="listitem">
+                        <div class="connect-icon" aria-hidden="true">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <a href="https://linkedin.com/in/coreyalejandro" target="_blank" rel="noopener" class="connect-link" aria-label="Visit LinkedIn profile">
+                            in/coreyalejandro
+                        </a>
+                    </article>
+
+                    <article class="connect-card" role="listitem">
+                        <div class="connect-icon" aria-hidden="true">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <h3>Twitter</h3>
+                        <a href="https://twitter.com/coreyalejandroX" target="_blank" rel="noopener" class="connect-link" aria-label="Visit Twitter profile">
+                            @coreyalejandroX
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Material Design Footer -->
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-icon">
+                <div class="footer-icon" aria-hidden="true">
                     <i class="fas fa-seedling"></i>
                 </div>
                 <p class="footer-text">
                     Building AI for good, one accessible system at a time.
                 </p>
-                <div class="footer-icon">
+                <div class="footer-icon" aria-hidden="true">
                     <i class="fas fa-seedling"></i>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Bottom Right Icons -->
-    <div class="bottom-icons">
-        <div class="icon-square">
-            <span>M</span>
-        </div>
-        <div class="icon-square">
-            <i class="fas fa-brain"></i>
-        </div>
+    <!-- Material Design Floating Action Buttons -->
+    <div class="bottom-icons" role="complementary" aria-label="Quick actions">
+        <button class="icon-square" type="button" aria-label="Material Design">
+            <span aria-hidden="true">M</span>
+        </button>
+        <button class="icon-square" type="button" aria-label="AI Brain">
+            <i class="fas fa-brain" aria-hidden="true"></i>
+        </button>
     </div>
 
     <script src="main.js"></script>
