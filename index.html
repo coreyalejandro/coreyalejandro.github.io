@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corey Alejandro | AI & Data Engineer</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Floating Particles Background -->
@@ -23,7 +24,7 @@
         <div class="particle" data-speed="0.4"></div>
     </div>
 
-    <!-- Parallax Layers -->
+    <!-- Parallax Container -->
     <div class="parallax-container">
         <!-- Deep Space Background -->
         <div class="parallax-layer space-bg" data-speed="0.1">
@@ -31,7 +32,7 @@
             <div class="nebula"></div>
         </div>
 
-        <!-- Floating Islands (Ghibli-inspired) -->
+        <!-- Floating Islands -->
         <div class="parallax-layer floating-islands" data-speed="0.3">
             <div class="island island-1"></div>
             <div class="island island-2"></div>
@@ -63,13 +64,12 @@
             <nav class="navbar">
                 <div class="nav-container">
                     <div class="nav-logo">
-                        <span class="logo-text">coreyalejandro</span>
+                        <span>coreyalejandro</span>
                     </div>
                     <div class="nav-links">
                         <a href="#about" class="nav-link">About</a>
-                        <a href="#projects" class="nav-link">Projects</a>
                         <a href="#skills" class="nav-link">Skills</a>
-                        <a href="#contact" class="nav-link">Connect</a>
+                        <a href="#contact" class="nav-link">Contact</a>
                         <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
                             <span class="theme-icon">🌙</span>
                         </button>
@@ -80,181 +80,82 @@
             <!-- Hero Section -->
             <section class="hero" id="about">
                 <div class="hero-container">
-                    <div class="hero-content">
-                        <div class="hero-avatar">
-                            <div class="avatar-container">
-                                <div class="avatar-glow"></div>
-                                <div class="avatar-image">
-                                    <i class="fas fa-brain"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <h1 class="hero-title">
-                            <span class="title-line">Corey Alejandro</span>
-                            <span class="title-subtitle">AI & Data Engineer</span>
-                        </h1>
-                        <p class="hero-description">
-                            Neurodivergent builder of trauma-informed, human-aware machine learning systems. 
-                            <span class="highlight">Studio Ghibli dreamer</span> with a passion for accessible AI.
-                        </p>
-                        <div class="hero-badges">
-                            <span class="badge badge-neurodivergent">♿️ Neurodivergent</span>
-                            <span class="badge badge-ai">🤖 AI for Good</span>
-                            <span class="badge badge-accessible">🌈 Accessible Design</span>
-                        </div>
-                        <div class="hero-cta">
-                            <a href="#projects" class="cta-button primary">View My Work</a>
-                            <a href="#contact" class="cta-button secondary">Let's Connect</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Philosophy Section -->
-            <section class="philosophy">
-                <div class="container">
-                    <div class="quote-card">
-                        <div class="quote-icon">🌾</div>
-                        <blockquote class="quote-text">
-                            "Write programs that do one thing and do it well."
-                        </blockquote>
-                        <cite class="quote-author">— Doug McIlroy, Unix Philosophy (1978)</cite>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Projects Section -->
-            <section class="projects" id="projects">
-                <div class="container">
-                    <h2 class="section-title">Featured Projects</h2>
-                    <div class="projects-grid">
-                        <div class="project-card" data-tilt>
-                            <div class="project-header">
-                                <div class="project-icon">
-                                    <i class="fas fa-robot"></i>
-                                </div>
-                                <h3 class="project-title">Trauma-Informed AI</h3>
-                            </div>
-                            <p class="project-description">
-                                Building machine learning systems that understand and respect human trauma responses.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">TensorFlow</span>
-                                <span class="tech-tag">Psychology</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card" data-tilt>
-                            <div class="project-header">
-                                <div class="project-icon">
-                                    <i class="fas fa-universal-access"></i>
-                                </div>
-                                <h3 class="project-title">Accessible UX Design</h3>
-                            </div>
-                            <p class="project-description">
-                                Creating inclusive interfaces that work for everyone, especially neurodivergent users.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">WCAG 2.1</span>
-                                <span class="tech-tag">UX Research</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card" data-tilt>
-                            <div class="project-header">
-                                <div class="project-icon">
-                                    <i class="fas fa-leaf"></i>
-                                </div>
-                                <h3 class="project-title">Ghibli-Inspired Systems</h3>
-                            </div>
-                            <p class="project-description">
-                                Bringing the magic and wonder of Studio Ghibli into digital experiences.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Three.js</span>
-                                <span class="tech-tag">CSS3</span>
-                                <span class="tech-tag">Animation</span>
-                            </div>
-                        </div>
-                    </div>
+                    <h1 class="hero-title">Corey Alejandro</h1>
+                    <h2 class="hero-subtitle">Data Scientist & AI/ML Engineer</h2>
+                    <p class="hero-description">
+                        Neurodivergent builder of trauma-informed, human-aware machine learning systems. 
+                        Passionate about accessible AI and creating technology that serves everyone.
+                    </p>
                 </div>
             </section>
 
             <!-- Skills Section -->
-            <section class="skills" id="skills">
+            <section id="skills">
                 <div class="container">
                     <h2 class="section-title">Skills & Expertise</h2>
                     <div class="skills-grid">
                         <div class="skill-category">
                             <h3 class="category-title">🤖 AI & Machine Learning</h3>
-                            <div class="skill-items">
-                                <div class="skill-item">
-                                    <span class="skill-name">Python</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress skill-95"></div>
-                                    </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Python</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress skill-95"></div>
                                 </div>
-                                <div class="skill-item">
-                                    <span class="skill-name">TensorFlow</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress skill-90"></div>
-                                    </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">TensorFlow/PyTorch</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress skill-92"></div>
                                 </div>
-                                <div class="skill-item">
-                                    <span class="skill-name">PyTorch</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress skill-85"></div>
-                                    </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">NLP & Computer Vision</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress skill-88"></div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="skill-category">
-                            <h3 class="category-title">🌐 Full Stack Development</h3>
-                            <div class="skill-items">
-                                <div class="skill-item">
-                                    <span class="skill-name">React</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress skill-88"></div>
-                                    </div>
+                            <h3 class="category-title">📊 Data Science</h3>
+                            <div class="skill-item">
+                                <span class="skill-name">Data Analysis</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress skill-95"></div>
                                 </div>
-                                <div class="skill-item">
-                                    <span class="skill-name">Node.js</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress skill-82"></div>
-                                    </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Statistical Modeling</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress skill-90"></div>
                                 </div>
-                                <div class="skill-item">
-                                    <span class="skill-name">TypeScript</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress skill-85"></div>
-                                    </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Big Data Processing</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress skill-85"></div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="skill-category">
                             <h3 class="category-title">♿️ Accessibility & UX</h3>
-                            <div class="skill-items">
-                                <div class="skill-item">
-                                    <span class="skill-name">WCAG 2.1 AA</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress skill-92"></div>
-                                    </div>
+                            <div class="skill-item">
+                                <span class="skill-name">WCAG 2.1 AA</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress skill-92"></div>
                                 </div>
-                                <div class="skill-item">
-                                    <span class="skill-name">Neurodivergent Design</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress skill-95"></div>
-                                    </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Neurodivergent Design</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress skill-95"></div>
                                 </div>
-                                <div class="skill-item">
-                                    <span class="skill-name">User Research</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress skill-88"></div>
-                                    </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">User Research</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress skill-88"></div>
                                 </div>
                             </div>
                         </div>
@@ -263,7 +164,7 @@
             </section>
 
             <!-- Contact Section -->
-            <section class="contact" id="contact">
+            <section id="contact">
                 <div class="container">
                     <h2 class="section-title">Let's Connect</h2>
                     <div class="contact-grid">
@@ -313,16 +214,9 @@
             <!-- Footer -->
             <footer class="footer">
                 <div class="container">
-                    <div class="footer-content">
-                        <p class="footer-text">
-                            Building AI for good, one accessible system at a time. 🌱
-                        </p>
-                        <div class="footer-decoration">
-                            <span>🌾</span>
-                            <span>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
-                            <span>🌾</span>
-                        </div>
-                    </div>
+                    <p class="footer-text">
+                        Building AI for good, one accessible system at a time. 🌱
+                    </p>
                 </div>
             </footer>
         </div>
