@@ -1,4 +1,4 @@
-// Main JavaScript file for Corey Alejandro's website - Material Dark Theme with Simple Parallax
+// Simple JavaScript for Corey Alejandro's website - Material Dark Theme
 
 document.addEventListener('DOMContentLoaded', function() {
     // Theme toggle functionality
@@ -30,40 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Simple Scrolling Parallax Effect (no zooming)
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const parallaxElements = document.querySelectorAll('.parallax-layer');
-        
-        parallaxElements.forEach(element => {
-            const speed = parseFloat(element.getAttribute('data-speed')) || 0.5;
-            const yPos = -(scrolled * speed);
-            
-            element.style.transform = `translateY(${yPos}px)`;
-        });
-    });
-
-    // Particle animation with enhanced effects
-    const particles = document.querySelectorAll('.particle');
-    particles.forEach(particle => {
-        const speed = parseFloat(particle.getAttribute('data-speed')) || 1;
-        let position = Math.random() * window.innerWidth;
-        let opacity = Math.random() * 0.5 + 0.3;
-        
-        function animateParticle() {
-            position += speed;
-            if (position > window.innerWidth + 50) {
-                position = -50;
-                opacity = Math.random() * 0.5 + 0.3;
-            }
-            particle.style.left = position + 'px';
-            particle.style.opacity = opacity;
-            requestAnimationFrame(animateParticle);
-        }
-        
-        animateParticle();
-    });
-
     // Animate skill bars when they come into view
     const skillBars = document.querySelectorAll('.skill-progress');
     const observerOptions = {
@@ -79,7 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
                              bar.classList.contains('skill-92') ? '92%' :
                              bar.classList.contains('skill-90') ? '90%' :
                              bar.classList.contains('skill-88') ? '88%' :
-                             bar.classList.contains('skill-85') ? '85%' : '80%';
+                             bar.classList.contains('skill-85') ? '85%' :
+                             bar.classList.contains('skill-80') ? '80%' :
+                             bar.classList.contains('skill-75') ? '75%' :
+                             bar.classList.contains('skill-70') ? '70%' : '80%';
                 
                 bar.style.width = width;
             }
@@ -87,32 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     skillBars.forEach(bar => observer.observe(bar));
-
-    // Add fade-in animation to sections
-    const sections = document.querySelectorAll('section');
-    const sectionObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-up');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    sections.forEach(section => sectionObserver.observe(section));
-
-    // Enhanced hover effects for contact cards
-    const contactCards = document.querySelectorAll('.contact-card');
-    contactCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-            this.style.boxShadow = '0 20px 40px rgba(187, 134, 252, 0.3)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-            this.style.boxShadow = '';
-        });
-    });
 
     // Add active state to navigation links
     const updateActiveNavLink = () => {
@@ -138,28 +81,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', updateActiveNavLink);
     updateActiveNavLink(); // Call once on load
-
-    // Add floating animation to islands
-    const islands = document.querySelectorAll('.island');
-    islands.forEach((island, index) => {
-        island.style.animationDelay = `${index * 2}s`;
-    });
-
-    // Add pulsing effect to neurons
-    const neurons = document.querySelectorAll('.neuron');
-    neurons.forEach((neuron, index) => {
-        neuron.style.animationDelay = `${index * 0.5}s`;
-    });
-
-    // Add flowing effect to data streams
-    const dataStreams = document.querySelectorAll('.data-stream');
-    dataStreams.forEach((stream, index) => {
-        stream.style.animationDelay = `${index * 2}s`;
-    });
 });
 
 // Console welcome message
 console.log('🌱 Welcome to Corey Alejandro\'s portfolio!');
 console.log('♿️ Built with accessibility and neurodivergent design in mind.');
-console.log('🎨 Material Dark theme with smooth scrolling parallax.');
-console.log('✨ No zooming effects - just beautiful smooth scrolling!');
+console.log('🎨 Clean Material Dark theme with subtle animations.');
