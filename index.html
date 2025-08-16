@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Animated Space Background -->
+    <div class="space-background">
+        <div class="stars"></div>
+        <div class="nebula"></div>
+        <div class="data-streams"></div>
+        <div class="floating-elements"></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -22,7 +30,7 @@
                 <a href="#skills" class="nav-link">SKILLS</a>
                 <a href="#connect" class="nav-link">CONNECT</a>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <span class="theme-icon">☀️</span>
+                    <span class="theme-icon">🌙</span>
                 </button>
             </div>
         </div>
@@ -41,27 +49,195 @@
                 Studio Ghibli dreamer with a passion for accessible AI.
             </p>
             <div class="hero-tags">
-                <span class="tag">
+                <span class="tag tag-neurodivergent">
                     <i class="fas fa-brain"></i>
                     NEURODIVERGENT
                 </span>
-                <span class="tag-divider">|</span>
-                <span class="tag">
-                    <i class="fas fa-desktop"></i>
+                <span class="tag tag-ai">
+                    <i class="fas fa-seedling"></i>
                     AI FOR GOOD
                 </span>
-                <span class="tag-divider">|</span>
-                <span class="tag">
-                    <i class="fas fa-user"></i>
+                <span class="tag tag-accessible">
+                    <i class="fas fa-universal-access"></i>
                     ACCESSIBLE DESIGN
                 </span>
             </div>
             <div class="hero-buttons">
-                <button class="btn btn-outline">VIEW MY WORK</button>
-                <button class="btn btn-outline">LET'S CONNECT</button>
+                <button class="btn btn-primary">VIEW MY WORK</button>
+                <button class="btn btn-secondary">LET'S CONNECT</button>
             </div>
         </div>
     </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote-card">
+                <div class="quote-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <blockquote class="quote-text">
+                    "Write programs that do one thing and do it well."
+                </blockquote>
+                <cite class="quote-attribution">
+                    — Doug McIlroy, Unix Philosophy (1978)
+                </cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="project-title">Trauma-Informed AI</h3>
+                    <p class="project-description">
+                        Building machine learning systems that understand and respect human trauma responses.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">PYTHON</span>
+                        <span class="project-tag">TENSORFLOW</span>
+                        <span class="project-tag">PSYCHOLOGY</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-universal-access"></i>
+                    </div>
+                    <h3 class="project-title">Accessible UX Design</h3>
+                    <p class="project-description">
+                        Creating inclusive interfaces that work for everyone, especially neurodivergent users.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">REACT</span>
+                        <span class="project-tag">WCAG 2.1</span>
+                        <span class="project-tag">UX RESEARCH</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="project-title">Ghibli-Inspired Systems</h3>
+                    <p class="project-description">
+                        Bringing the magic and wonder of Studio Ghibli into digital experiences.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">THREE.JS</span>
+                        <span class="project-tag">CSS3</span>
+                        <span class="project-tag">ANIMATION</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="category-title">🤖 AI & Machine Learning</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">Python</div>
+                        <div class="skill-item">TensorFlow</div>
+                        <div class="skill-item">PyTorch</div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">🌐 Full Stack Development</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">React</div>
+                        <div class="skill-item">Node.js</div>
+                        <div class="skill-item">TypeScript</div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">♿️ Accessibility & UX</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">WCAG 2.1 AA</div>
+                        <div class="skill-item">Neurodivergent Design</div>
+                        <div class="skill-item">User Research</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section id="connect">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="connect-grid">
+                <div class="connect-card">
+                    <div class="connect-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/coreyalejandro" target="_blank" rel="noopener" class="connect-link">
+                        @coreyalejandro
+                    </a>
+                </div>
+
+                <div class="connect-card">
+                    <div class="connect-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Portfolio</h3>
+                    <a href="https://coreyalejandro.com" target="_blank" rel="noopener" class="connect-link">
+                        coreyalejandro.com
+                    </a>
+                </div>
+
+                <div class="connect-card">
+                    <div class="connect-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://linkedin.com/in/coreyalejandro" target="_blank" rel="noopener" class="connect-link">
+                        in/coreyalejandro
+                    </a>
+                </div>
+
+                <div class="connect-card">
+                    <div class="connect-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <h3>Twitter</h3>
+                    <a href="https://twitter.com/coreyalejandroX" target="_blank" rel="noopener" class="connect-link">
+                        @coreyalejandroX
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <p class="footer-text">
+                    Building AI for good, one accessible system at a time.
+                </p>
+                <div class="footer-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Bottom Right Icons -->
     <div class="bottom-icons">
