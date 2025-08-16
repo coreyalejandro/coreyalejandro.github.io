@@ -1,4 +1,4 @@
-// Simple JavaScript for Corey Alejandro's website - Material Dark Theme
+// Sophisticated JavaScript for Corey Alejandro's website - Material Dark Theme
 
 document.addEventListener('DOMContentLoaded', function() {
     // Theme toggle functionality
@@ -30,32 +30,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Animate skill bars when they come into view
-    const skillBars = document.querySelectorAll('.skill-progress');
-    const observerOptions = {
-        threshold: 0.5,
-        rootMargin: '0px 0px -100px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const bar = entry.target;
-                const width = bar.classList.contains('skill-95') ? '95%' :
-                             bar.classList.contains('skill-92') ? '92%' :
-                             bar.classList.contains('skill-90') ? '90%' :
-                             bar.classList.contains('skill-88') ? '88%' :
-                             bar.classList.contains('skill-85') ? '85%' :
-                             bar.classList.contains('skill-80') ? '80%' :
-                             bar.classList.contains('skill-75') ? '75%' :
-                             bar.classList.contains('skill-70') ? '70%' : '80%';
-                
-                bar.style.width = width;
-            }
+    // Hero button interactions
+    const viewWorkBtn = document.querySelector('.btn-primary');
+    const connectBtn = document.querySelector('.btn-secondary');
+    
+    if (viewWorkBtn) {
+        viewWorkBtn.addEventListener('click', function() {
+            document.getElementById('projects').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         });
-    }, observerOptions);
-
-    skillBars.forEach(bar => observer.observe(bar));
+    }
+    
+    if (connectBtn) {
+        connectBtn.addEventListener('click', function() {
+            document.getElementById('connect').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    }
 
     // Add active state to navigation links
     const updateActiveNavLink = () => {
@@ -81,9 +76,119 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', updateActiveNavLink);
     updateActiveNavLink(); // Call once on load
+
+    // Enhanced hover effects for cards
+    const cards = document.querySelectorAll('.project-card, .skill-category, .connect-card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+            this.style.boxShadow = '0 20px 40px rgba(187, 134, 252, 0.3)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '';
+        });
+    });
+
+    // Animate elements on scroll
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.project-card, .skill-category, .connect-card, .quote-card');
+        
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('animate-in');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Call once on load
+
+    // Parallax effect for background elements
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.animated-bg > div');
+        
+        parallaxElements.forEach((element, index) => {
+            const speed = 0.5 + (index * 0.1);
+            const yPos = -(scrolled * speed);
+            element.style.transform = `translateY(${yPos}px)`;
+        });
+    });
+
+    // Add floating animation to code snippets
+    const codeSnippets = document.querySelector('.code-snippets');
+    if (codeSnippets) {
+        // Create additional floating code elements
+        const codeLines = [
+            'const joy = true;',
+            'function createMagic() {',
+            'return "parallax";',
+            'async function dream() {',
+            'await sleep(1000);'
+        ];
+        
+        codeLines.forEach((line, index) => {
+            const codeElement = document.createElement('div');
+            codeElement.textContent = line;
+            codeElement.style.cssText = `
+                position: absolute;
+                top: ${20 + (index * 15)}%;
+                left: ${10 + (index * 20)}%;
+                font-family: 'Courier New', monospace;
+                font-size: 0.8rem;
+                color: rgba(187, 134, 252, 0.3);
+                pointer-events: none;
+                animation: code-float ${15 + Math.random() * 10}s ease-in-out infinite;
+                animation-delay: ${index * 2}s;
+            `;
+            codeSnippets.appendChild(codeElement);
+        });
+    }
 });
 
+// Add CSS for animations
+const style = document.createElement('style');
+style.textContent = `
+    .animate-in {
+        animation: slideInUp 0.8s ease-out forwards;
+    }
+    
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .project-card,
+    .skill-category,
+    .connect-card,
+    .quote-card {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    
+    .project-card.animate-in,
+    .skill-category.animate-in,
+    .connect-card.animate-in,
+    .quote-card.animate-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`;
+document.head.appendChild(style);
+
 // Console welcome message
-console.log('🌱 Welcome to Corey Alejandro\'s portfolio!');
+console.log('🌟 Welcome to Corey Alejandro\'s sophisticated portfolio!');
 console.log('♿️ Built with accessibility and neurodivergent design in mind.');
-console.log('🎨 Clean Material Dark theme with subtle animations.');
+console.log('🎨 Sophisticated Material Dark theme with dynamic animations.');
+console.log('✨ Featuring floating code snippets and neural network aesthetics!');
